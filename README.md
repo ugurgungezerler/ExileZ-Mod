@@ -5,18 +5,27 @@ This is an update/modification of ExileZ 2.0 by Patrix87. The file scructure has
 ## Features
 
 Dynamic Zombie spawning
+
 Location based Zombie spawning
+
 Harassing Zombies
+
 Hordes
+
 Built in Zombie mission (for specific maps)
+
 Working safezone and territory detection
+
 Supports ANY map (and includes a number of map specific configs)
+
 Highly configurable Zombie options
+
 Supports Infections (See here for required additional files)
 
 ## Requirements
 
 Zombies and Demons (http://steamcommunity.com/sharedfiles/filedetails/?id=501966277)
+
 ExileMod (http://www.exilemod.com/downloads/)
 
 ## Download
@@ -49,7 +58,7 @@ addOns[]=
 
 ## Configuration
 
-The script is configured to run with Altis, Tanoa, Namalsk, Chernarus (Normal, Winter, Summer, and Isles), Napf, Bornholm, Esseker, Al Rayak, and Taviana, with all the features enabled by default.
+The script is configured to run with Altis, Tanoa, Namalsk, Chernarus (Normal, Winter, Summer, and Isles), Napf, Bornholm, Esseker, Al Rayak, and Taviana, with all the features enabled by default but will still run on ANY map if an unsupported map is detected.
 
 Almost all of the information related to the configuration is in 'exilez_mod\config.sqf'.
 
