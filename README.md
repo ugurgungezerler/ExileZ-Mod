@@ -20,7 +20,7 @@ Supports ANY map (and includes a number of map specific configs)
 
 Highly configurable Zombie options
 
-Supports Infections (See here for required additional files)
+Supports Infections (See here for required additional files: http://steamcommunity.com/sharedfiles/filedetails/?id=614815221)
 
 ## Requirements
 
