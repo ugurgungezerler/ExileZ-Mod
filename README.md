@@ -26,8 +26,11 @@ https://github.com/kuplion/ExileZ-Mod
 ## Installation
 
 1: Edit main settings in 'exilez_mod\config.sqf'.
+
 2: Edit triggers and settings (if required) in 'exilez_mod\triggers\'.
+
 3: Edit zombie classes and loot in 'exilez_mod\zombies\'.
+
 4: Edit the Zombie mission loot in 'exilez_mod\mission\zMissionLootCrate.sqf'.
 
 5: Pack exilez_mod.pbo with either PBO Manager 1.4b x64 (http://www.armaholic.com/page.php?id=16369) or Eliteness/MikeRo tools if you have them.
@@ -53,12 +56,19 @@ Almost all of the information related to the configuration is in 'exilez_mod\con
 ## How to export Triggers positions
 
 1: Open arma with NO MODS other than the map you are using.
+
 2: Open Eden Editor and DO NOT load a mission file.
+
 3: Place an Elliptic Marker *(not a trigger) on every region you want a spawner and set its radius.
+
 4: Copy Paste the code from GetMarkerCmd.txt inside the debug console.
+
 5: Execute the code.
+
 6: Open Notepad, CTRL+V / (Paste).
+
 7: ???
+
 8: Profit!
 
 ## License
