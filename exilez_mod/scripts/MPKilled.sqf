@@ -6,29 +6,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 // Original script by eraser1 and IT07 //
  
-private [
-"_unit",
-"_killer",
-"_playerObj",
-"_veh",
-"_killMsg",
-"_killMsgRoad",
-"_roadKilled",
-"_respect",
-"_respectChange",
-"_roadKillBonus",
-"_money",
-"_zombieMoney",
-"_zombieRespect",
-"_distanceBonusDivider",
-"_minDistance",
-"_cqbDistance",
-"_cqbBonus",
-"_distance",
-"_killerRespectPoints",
-"_safetoblow",
-"_explode"
-];
+private ["_unit","_killer","_playerObj","_veh","_killMsg","_killMsgRoad","_roadKilled","_respect","_respectChange","_roadKillBonus","_money","_zombieMoney","_zombieRespect","_distanceBonusDivider","_minDistance","_cqbDistance","_cqbBonus","_distance","_killerRespectPoints","_safetoblow","_explode"];
 
 _unit           		= _this select 0;
 _killer         		= _this select 1;

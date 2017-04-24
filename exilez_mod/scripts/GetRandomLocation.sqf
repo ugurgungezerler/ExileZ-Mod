@@ -8,20 +8,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 //_NewPosition = [_position,MinDistance,MaxDistance] call GetRandomLocation;
 
-private[
-	"_xOffset",
-	"_yOffset",
-	"_center",
-	"_position",
-	"_maxDistance",
-	"_minDistance",
-	"_radius",
-	"_angle",
-	"_centerX",
-	"_centerY",
-	"_newX",
-	"_newY"
-	];
+private["_xOffset","_yOffset","_center","_position","_maxDistance","_minDistance","_radius","_angle","_centerX","_centerY","_newX","_newY"];
 
 
 _center = _this select 0;

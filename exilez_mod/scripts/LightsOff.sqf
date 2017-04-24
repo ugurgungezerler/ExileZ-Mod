@@ -9,7 +9,9 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 		//_x setDamage 0.95; //old code
 		[_x, FALSE] call BIS_fnc_switchLamp; //1.64 code
 	}foreach(getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition") nearObjects [_x,20000]);
-}foreach[
+}
+foreach
+[
 	"Land_LightHouse_F",
 	"Land_Lighthouse_small_F",
 	"Land_LampAirport_F",

@@ -5,10 +5,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 */
 
 //Create a group for the zombies
-private[
-    "_group",
-	"_obj"
-	];
+private["_group","_obj"];
 	_obj = _this select 0;
 
 _group = creategroup ZombieSide;
