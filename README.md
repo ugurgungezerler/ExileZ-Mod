@@ -80,5 +80,9 @@ Almost all of the information related to the configuration is in 'exilez_mod\con
 
 8: Profit!
 
+## Donations
+
+If you feel so inclined, donations can be sent to myself via PayPal donate@FriendlyPlayerShooting.com or to Patrix87 via PayPal patrix87@gmail.com
+
 ## License
 Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
