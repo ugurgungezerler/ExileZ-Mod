@@ -28,6 +28,24 @@ Zombies and Demons (http://steamcommunity.com/sharedfiles/filedetails/?id=501966
 
 ExileMod (http://www.exilemod.com/downloads/)
 
+## Changes
+
+Fixed Safezone detection
+
+Fixed Territory detection
+
+Optimised file structure
+
+Added specific map configs
+
+Added support for ANY map
+
+## Upcoming Changes
+
+AI offloading
+
+More map configs
+
 ## Download
 
 https://github.com/kuplion/ExileZ-Mod
