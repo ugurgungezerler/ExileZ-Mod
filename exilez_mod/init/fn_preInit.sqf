@@ -221,6 +221,19 @@ switch (toLower worldName) do
 		// Trigger Settings
 		call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\tavianaTriggerSettings.sqf";
 	};
+	
+	case "xcam_taunus": // Taunus
+    {
+        // Trigger Positions
+        call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\taunusTriggerPositions.sqf";
+
+        //Loot Crate and Mission Objects
+        triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\taunusZedMission.sqf.sqf";
+        triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+
+        // Trigger Settings
+        call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\taunusTriggerSettings.sqf";
+    };
 
 };
 
