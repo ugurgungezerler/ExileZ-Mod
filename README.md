@@ -78,7 +78,7 @@ addOns[]=
 
 ## Configuration
 
-The script is configured to run with Altis, Tanoa, Namalsk, Chernarus (Normal, Winter, Summer, and Isles), Napf, Bornholm, Esseker, Al Rayak, and Taviana, with all the features enabled by default but will still run on ANY map if an unsupported map is detected.
+The script is configured to run with Altis, Tanoa, Namalsk, Chernarus (Normal, Winter, Summer, and Isles), Napf, Bornholm, Esseker, Al Rayak, Taviana, and Taunus, with all the features enabled by default but will still run on ANY map if an unsupported map is detected.
 
 Almost all of the information related to the configuration is in 'exilez_mod\config.sqf'.
 
