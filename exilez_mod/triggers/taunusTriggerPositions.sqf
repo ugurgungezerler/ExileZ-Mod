@@ -156,4 +156,7 @@ NoBuildings =
 [10080.3,5410.8,300],
 [12142.2,356.628,300],
 [2633.36,2510.52,300]
-]; 
+];
+
+// Check Config Compiled
+EZM_TriggersCompiledOkay				= true;
