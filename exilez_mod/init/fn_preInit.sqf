@@ -8,10 +8,10 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 exileZmod_version = getText (configFile >> "CfgPatches" >> "exilez_mod" >> "exileZmod_version");
 
 // Log stuff
-diag_log format ["[EZM]:: ExileZ Mod %1 Giving the server time to start before starting [EZM] (%2)", exileZmod_version, time];
+diag_log format ["[EZM]:: ExileZ Mod %1 | Giving the server time to start before starting [EZM] (%2)", exileZmod_version, time];
 
 // Log more stuff
-diag_log format ["[EZM]:: ExileZ Mod %1 Loading Configs at %2", exileZmod_version, time];
+diag_log format ["[EZM]:: ExileZ Mod %1 | Loading Configs at %2", exileZmod_version, time];
 
 // Get the Zombie Configs/Loot/Vests/Classes
 // Get the Zombie Classes List
@@ -250,4 +250,4 @@ if (isNil "EZM_SettingsCompiledOkay") exitWith
 };
 
 // Log more stuff
-diag_log format ["[EZM]:: ExileZ Mod %1 Loaded all Configs at %2", exileZmod_version, time];
+diag_log format ["[EZM]:: ExileZ Mod %1 | Loaded all Configs at %2", exileZmod_version, time];

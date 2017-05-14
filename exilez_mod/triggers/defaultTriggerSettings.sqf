@@ -24,7 +24,7 @@ Trigger_1 = [				 //Cities
 /* 16 Loot Box */            nil                 // The location of the Missionloot file related to that trigger *(See example file zmissionloot.sqf)
 ];
 
-Trigger_2 = [				 //Military
+Trigger_2 = [				 //Main Cities Only
 /* 0  Use this trigger */    True,               
 /* 1  Trigger Positions */   MainCitiesOnly,        
 /* 2  Max Zombies */         150,                 
