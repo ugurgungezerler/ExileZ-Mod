@@ -247,6 +247,19 @@ switch (toLower worldName) do
         // Trigger Settings
         call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\chernobylZoneTriggerSettings.sqf";
 	};
+	
+	case "stratis":
+	{
+        // Trigger Positions
+        call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\stratisTriggerPosition.sqf";
+
+        //Loot Crate and Mission Objects
+        triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\stratisZedMission.sqf";
+        triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+
+        // Trigger Settings
+        call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\stratisTriggerSettings.sqf";
+	};
 
 };
 

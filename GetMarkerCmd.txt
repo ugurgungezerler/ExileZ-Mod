@@ -1,8 +1,9 @@
-
-tmarkers = [];mpos = []; msize = []; mname = [];
-{mpos = getMarkerPos _x;
-msize = getMarkerSize _x;
+_zedMarkers = [];mpos = []; msize = []; mname = [];
+{
+mpos = getMarkerPos _x;
+msize = getMarkersize _x;
 mname = text _x;
-tmarkers = tmarkers + [[mpos select 0, mpos select 1,msize select 0],mname];
-}foreach allMapMarkers;
-copyToClipboard str tmarkers;
+_zedMarkers = _zedMarkers + [[mpos select 0, mpos select 1,msize select 0],mname];
+}
+foreach allMapMarkers;
+copyToClipboard str _zedMarkers;
