@@ -264,7 +264,7 @@ switch (toLower worldName) do
 	case "malden":
 	{
         // Trigger Positions
-        call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\maldenTriggerPosition.sqf";
+        call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\maldenTriggerPositions.sqf";
 
         //Loot Crate and Mission Objects
         triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\maldenZedMission.sqf";
