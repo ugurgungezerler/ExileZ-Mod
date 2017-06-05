@@ -260,6 +260,19 @@ switch (toLower worldName) do
         // Trigger Settings
         call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\stratisTriggerSettings.sqf";
 	};
+	
+	case "malden":
+	{
+        // Trigger Positions
+        call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\maldenTriggerPosition.sqf";
+
+        //Loot Crate and Mission Objects
+        triggerMission = compileFinal preprocessFileLineNumbers "exilez_mod\mission\maldenZedMission.sqf";
+        triggerLootCrate = compileFinal preprocessFileLineNumbers "exilez_mod\mission\zMissionLootCrate.sqf";
+
+        // Trigger Settings
+        call compileFinal preprocessFileLineNumbers "exilez_mod\triggers\maldenTriggerSettings.sqf";
+	};
 
 };
 

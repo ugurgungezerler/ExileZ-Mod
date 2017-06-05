@@ -78,7 +78,7 @@ addOns[]=
 
 ## Configuration
 
-The script is configured to run with Altis, Tanoa, Namalsk, Chernarus (Normal, Winter, Summer, and Isles), Napf, Bornholm, Esseker, Al Rayak, Taviana, and Taunus, with all the features enabled by default but will still run on ANY map if an unsupported map is detected.
+The script is configured to run with Altis, Tanoa, Namalsk, Malden, Chernarus (Normal, Winter, Summer, and Isles), Napf, Bornholm, Esseker, Al Rayak, Taviana, and Taunus, with all the features enabled by default but will still run on ANY map if an unsupported map is detected.
 
 Almost all of the information related to the configuration is in 'exilez_mod\config.sqf'.
 
@@ -90,15 +90,17 @@ Almost all of the information related to the configuration is in 'exilez_mod\con
 
 3: Place an Elliptic Marker *(not a trigger) on every region you want a spawner and set its radius.
 
-4: Copy Paste the code from GetMarkerCmd.txt inside the debug console.
+4: Start the scenario (run the mission).
 
-5: Execute the code.
+5: Copy Paste the code from GetMarkerCmd.txt inside the debug console (press ESC to see it).
 
-6: Open Notepad, CTRL+V / (Paste).
+6: Execute the code.
 
-7: ???
+7: Open Notepad, CTRL+V / (Paste).
 
-8: Profit!
+8: ???
+
+9: Profit!
 
 ## Donations
 
