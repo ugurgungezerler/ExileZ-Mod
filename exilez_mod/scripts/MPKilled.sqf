@@ -28,8 +28,8 @@ _distanceBonusDivider 	= DistanceBonusDivider;		//default = 10;	// Distance divi
 //
 _maxMoneyOnZed			= ZombieMaxMoney;		//default = 15; // Max Money per zombie kill will be random
 
-_killMsg = ["ZOMBIE WACKED","ZOMBIE CLIPPED","ZOMBIE DISABLED","ZOMBIE DISQUALIFIED","ZOMBIE WIPED","ZOMBIE WIPED","ZOMBIE ERASED","ZOMBIE LYNCHED","ZOMBIE WRECKED","ZOMBIE NEUTRALIZED","ZOMBIE SNUFFED","ZOMBIE WASTED","ZOMBIE ZAPPED"] call BIS_fnc_selectRandom;
-_killMsgRoad = ["ZOMBIE ROADKILL","ZOMBIE SMASHED","ERMAHGERD ROADKILL"] call BIS_fnc_selectRandom;
+_killMsg = selectRandom ["ZOMBIE WACKED","ZOMBIE CLIPPED","ZOMBIE DISABLED","ZOMBIE DISQUALIFIED","ZOMBIE WIPED","ZOMBIE WIPED","ZOMBIE ERASED","ZOMBIE LYNCHED","ZOMBIE WRECKED","ZOMBIE NEUTRALIZED","ZOMBIE SNUFFED","ZOMBIE WASTED","ZOMBIE ZAPPED"];
+_killMsgRoad = selectRandom ["ZOMBIE ROADKILL","ZOMBIE SMASHED","ERMAHGERD ROADKILL"];
 
 if(ExplosiveZombies) then 
 {
@@ -38,6 +38,14 @@ if(ExplosiveZombies) then
 		_killerRespectPoints pushBack [(format ["%1",ExplosiveZombieWarning]), ExplosiveRespect];
 		_explode = true;
 	};
+};
+
+// Remove Zombie from Monitor
+EZM_aliveZombies = EZM_aliveZombies - [_unit];
+
+if (Debug) then
+{
+	"ExileZ Mod: Removing 1 Zombie (Killed)" call ExileServer_util_log;
 };
 
 

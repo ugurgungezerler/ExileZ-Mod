@@ -285,8 +285,23 @@ ZMPKilled = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\MPKilled.
 GetRandomLocation = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\GetRandomLocation.sqf";
 VerifyLocation = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\VerifyLocation.sqf";
 HordeLoop = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\HordeLoop.sqf";
-ZombieDeleter = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\ZombieDeleter.sqf";
+//ZombieDeleter = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\ZombieDeleter.sqf";
 TurnTheLightsOff = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\LightsOff.sqf";
+
+// Compile the Zombie Monitor
+ZombieMonitor = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\ZombieMonitor.sqf";
+
+// Add Zombie Monitor to ExileServer Thread
+if (Debug) then
+{
+	[Maxtime/2, ZombieMonitor, [], true] call ExileServer_system_thread_addTask;
+	"ExileZ Mod: Added Debug Zombie Monitor to ExileServer Thread" call ExileServer_util_log;
+}
+else
+{
+	[Maxtime, ZombieMonitor, [], true] call ExileServer_system_thread_addTask;
+	"ExileZ Mod: Added Zombie Monitor to ExileServer Thread" call ExileServer_util_log;
+};
 
 //Exile Vars
 MaxTerritoryRange = getNumber (missionConfigFile >> "CfgTerritories" >> "maximumRadius");

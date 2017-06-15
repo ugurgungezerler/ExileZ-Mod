@@ -49,6 +49,10 @@ if (isNil "EZM_CompiledOkay") exitWith
 	diag_log format ["[EZM]:: ExileZ Mod failed to read exilez_mod\config.sqf, check for typos (time: %1)",time];
 };
 
+// Create Zombie Monitor
+EZM_aliveZombies = [];
+publicVariable "EZM_aliveZombies";
+
 // Compile World Trigger Positions
 switch (toLower worldName) do
 {

@@ -11,7 +11,8 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 private ["_TempPosition","_face","_group","_position","_vestGroup","_lootGroup","_zombieGroup","_validLocation","_zClass","_maxSpawnDistance","_return","_result","_maxValue"];
 
-_group =             _this select 0;
+_group = createGroup ZombieSide;
+//_group =             _this select 0;
 _position =          _this select 1;
 _vestGroup =         _this select 2;
 _lootGroup =         _this select 3;
@@ -95,7 +96,8 @@ else
 		diag_log format["ExileZ Mod: Spawning 1 Zombie	|	Position : %1	|	Class : %2 ",_position,_zClass];
 	};
 
-	_zClass createUnit 
+	// Old Spawn Zombie Method
+	/*_zClass createUnit 
 	[
 		_position,
 		_group,
@@ -110,7 +112,38 @@ else
 		nul = [this] spawn ZombieDeleter;
 		"
 		
-	];
+	];*/
+	
+	// New Spawn Zombie Method
+	
+	//_group = createGroup ZombieSide;
+	
+	_zombie = _group createUnit [_zClass, _position, [], 0, "NONE"]; 
+	_zombie disableAI 'FSM'; 
+	_zombie enableAI 'ANIM'; 
+	_zombie disableConversation true; 
+	_zombie addMPEventHandler ['MPKilled', {_this call ZMPKilled;}]; 
+	[_zombie] joinSilent _group;
+	
+	// Add Zombie Loot
+	if !(call _vestGroup=='') then
+	{
+		_zombie addVest call _vestGroup;
+	
+		if !(call _lootGroup=='') then
+		{
+			_zombie addItemToVest call _lootGroup;
+		};
+	};
+
+	// Fixes Zombie Faces
+	_zedFaceArray = ["RyanZombieFace1", "RyanZombieFace2", "RyanZombieFace3", "RyanZombieFace4", "RyanZombieFace5", "RyanZombieFace6"]; 
+	_face = selectRandom _zedFaceArray; 
+	_zombie setface _face;
+	
+	// Add to Zombie Monitor
+	EZM_aliveZombies pushback _zombie;
+	
 };
 
 //return

@@ -40,6 +40,8 @@ Added specific map configs
 
 Added support for ANY map
 
+Integrated Zombie Monitor for better performance
+
 ## Upcoming Changes
 
 AI offloading
