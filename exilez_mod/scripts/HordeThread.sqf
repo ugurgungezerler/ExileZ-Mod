@@ -16,9 +16,9 @@ _hordeDensity =      (_this select 0) select 4;
 // Wait 2 minutes before starting Horde Loop
 if (time < 120) exitWith 
 {
-    if(Debug) then 
+    if (Debug) then 
     {
-        diag_log format["ExileZ Mod: Waiting until the server has been up at least 5 minutes (it has currently been up for %1 seconds)",time];
+        diag_log format["ExileZ Mod: Waiting until the server has been up at least 2 minutes (it has currently been up for %1 seconds)",time];
     };
 };
 

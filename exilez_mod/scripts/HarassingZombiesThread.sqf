@@ -14,19 +14,10 @@ _zombieGroup =       (_this select 0) select 3;
 // Wait 2 minutes before starting Harassing Zombie Loop
 if (time < 120) exitWith 
 {
-    if(Debug) then 
+    if (Debug) then 
     {
-        format["ExileZ Mod: Waiting until the server has been up at least 5 minutes (it has currently been up for %1 seconds)",time] call ExileServer_util_log;
+        diag_log format["ExileZ Mod: Waiting until the server has been up at least 2 minutes (it has currently been up for %1 seconds)",time];
     };
-};
-
-
-	
-// Number of real players
-_nPlayer = count (allPlayers - entities "HeadlessClient_F");
-if (Debug) then 
-{
-	diag_log format["ExileZ Mod: %1 Player in game.",_nPlayer];
 };
 
 // Run the Harassing Zombie Loop

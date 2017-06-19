@@ -5,7 +5,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 */
 
 // Global Settings
-ZombieSide                   = EAST;             // zombie team side east, west and Civilian can be used
+ZombieSide                   = WEST;             // zombie team side east, west and Civilian can be used
 CorpseDeleteDelay            = 300;              // delay before a zombie corpse is deleted.
 Debug                        = true;             // debug messages.
 MinSpawnDistance             = 20;               // Closest distance from any player to spawn a zombie.
