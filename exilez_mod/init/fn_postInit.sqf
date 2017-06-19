@@ -278,14 +278,13 @@ if (EZM_ryanzombiesmovementspeedcrawler >= 0) then
 // CompileFinal Files
 CreateTriggers = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\CreateTriggers.sqf";
 TriggerLoop = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\TriggerLoop.sqf";
-HarassingZombiesLoop = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\HarassingZombiesLoop.sqf";
 InitGroup = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\InitGroup.sqf";
 SpawnZombie = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\SpawnZombie.sqf";
 ZMPKilled = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\MPKilled.sqf";
 GetRandomLocation = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\GetRandomLocation.sqf";
 VerifyLocation = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\VerifyLocation.sqf";
 HordeLoop = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\HordeLoop.sqf";
-//ZombieDeleter = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\ZombieDeleter.sqf";
+HarassingZombiesLoop = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\HarassingZombiesLoop.sqf";
 TurnTheLightsOff = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\LightsOff.sqf";
 
 // Compile the Zombie Monitor
@@ -302,7 +301,7 @@ else
 	[Maxtime, ZombieMonitor, [], true] call ExileServer_system_thread_addTask;
 	"ExileZ Mod: Added Zombie Monitor to ExileServer Thread" call ExileServer_util_log;
 };
-
+	
 //Exile Vars
 MaxTerritoryRange = getNumber (missionConfigFile >> "CfgTerritories" >> "maximumRadius");
 
@@ -320,14 +319,14 @@ if (UseTriggers) then
 			_zgroup = _currentTrigger select 13;
 			if (Debug) then
 			{
-				Diag_log Format["ExileZ Mod: Compounding Zombie Group Weight, Selected Group Trigger Index : %1",_forEachIndex];
+				format["ExileZ Mod: Compounding Zombie Group Weight, Selected Group Trigger Index : %1",_forEachIndex] call ExileServer_util_log;
 			};
 			_count = 0;
 			{
 				_count = _count + (_x select 1);
 				if (Debug) then
 				{
-					Diag_log Format["ExileZ Mod: Zombie Type Index : %1		Weight : %2		Compound Weight Value : 	%3",_forEachIndex,_x select 1,_count];
+					format["ExileZ Mod: Zombie Type Index : %1		Weight : %2		Compound Weight Value : 	%3",_forEachIndex,_x select 1,_count] call ExileServer_util_log;
 				};
 				(_zgroup select _forEachIndex) set [1,_count];
 			}foreach (_zgroup);
@@ -359,4 +358,4 @@ if (LightsOff) then
 
 sleep 1;
 
-diag_log format ["[EZM]:: ExileZ Mod %1 Started at (%2)", exileZmod_version, time];
+format ["ExileZ Mod %1 Started at (%2)", exileZmod_version, time] call ExileServer_util_log;

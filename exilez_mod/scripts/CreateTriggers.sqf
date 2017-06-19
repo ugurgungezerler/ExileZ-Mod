@@ -77,7 +77,7 @@ if (_showTriggerOnMap) then {
 
 
 if (Debug) then {
-	diag_log format["ExileZ Mod: Creating Trigger	|	Position : %1 	|	Radius : %2m	|	Near : %3 ",_triggerPosition,_triggerRadius,_nearestLocation];
+	format["ExileZ Mod: Creating Trigger	|	Position : %1 	|	Radius : %2m	|	Near : %3 ",_triggerPosition,_triggerRadius,_nearestLocation] call ExileServer_util_log;
 };
 
 // Store Variables in the trigger.

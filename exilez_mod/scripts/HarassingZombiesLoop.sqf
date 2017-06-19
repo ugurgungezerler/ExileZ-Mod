@@ -21,7 +21,7 @@ while {true} do
 	
 		if (Debug) then
 		{
-			diag_log format["ExileZ Mod | HarassingZombiesLoop: GroupSize : %1 | Frequency : %2 | Vest : %3 | Loot : %4 | ZGroup : %5",_groupSize,_frequency,_vestGroup,_lootGroup,_zombieGroup];
+			format["ExileZ Mod: HarassingZombiesLoop: GroupSize : %1 | Frequency : %2 | Vest : %3 | Loot : %4 | ZGroup : %5",_groupSize,_frequency,_vestGroup,_lootGroup,_zombieGroup] call ExileServer_util_log;
 		};
 	
 		if ((HarassingZombieAtNightOnly AND (daytime >= NightStartTime or daytime < NightEndTime)) OR !(HarassingZombieAtNightOnly)) then 
@@ -53,7 +53,7 @@ while {true} do
 						nul = [_group,_playerPosition,_vestGroup,_lootGroup,_zombieGroup] spawn SpawnZombie;
 						if (Debug) then 
 						{
-							diag_log format["ExileZ Mod: Spawning 1 Zombie for %1.",_playerName];
+							format["ExileZ Mod: Spawning 1 Zombie for %1.",_playerName] call ExileServer_util_log;
 						};
 					};
 				};
@@ -64,7 +64,7 @@ while {true} do
 		_nPlayer = count (allPlayers - entities "HeadlessClient_F");
 		if (Debug) then 
 		{
-			diag_log format["ExileZ Mod: %1 Player in game.",_nPlayer];
+			format["ExileZ Mod: %1 Player in game.",_nPlayer] call ExileServer_util_log;
 		};
 		
 		//pause between spawn
@@ -72,7 +72,7 @@ while {true} do
 		{
 			if (Debug) then 
 			{
-				diag_log format["ExileZ Mod: Waiting %1 seconds.",_frequency];
+				format["ExileZ Mod: Waiting %1 seconds.",_frequency] call ExileServer_util_log;
 			};
 			sleep _frequency;
 		}
@@ -81,7 +81,7 @@ while {true} do
 			_sTime = round (_frequency / _nPlayer);
 			if (Debug) then 
 			{
-				diag_log format["ExileZ Mod: Waiting %1 seconds.",_sTime];
+				format["ExileZ Mod: Waiting %1 seconds.",_sTime] call ExileServer_util_log;
 			};
 			sleep _sTime;
 		};

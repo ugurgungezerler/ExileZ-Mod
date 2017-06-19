@@ -22,8 +22,9 @@ while {true} do
 {
 	//wait sleep time
 	_sleepTime = (_minFrequency + (ceil random (_maxFrequency - _minFrequency)))*60;
-	if (Debug) then {
-		diag_log format["ExileZ Mod: Next Horde in %1 minutes.",_sleeptime/60];
+	if (Debug) then
+	{
+		format["ExileZ Mod: Next Horde in %1 minutes.",_sleeptime/60] call ExileServer_util_log;
 	};
 	sleep _sleeptime;
 	
@@ -79,7 +80,8 @@ while {true} do
 
 			if (Debug) then 
 			{
-				diag_log format["ExileZ Mod: Spawning Horde near %1.",_playerName];
+				
+				format["ExileZ Mod: Spawning Horde near %1.",_playerName] call ExileServer_util_log;
 			};
 			for "_i" from 1 to _groupSize do 
 			{
@@ -89,8 +91,9 @@ while {true} do
 		}
 		else
 		{
-			if (Debug) then {
-				diag_log "ExileZ Mod: No valid player found for the Horde";
+			if (Debug) then
+			{
+				"ExileZ Mod: No valid player found for the Horde" call ExileServer_util_log;
 			};
 		};
 	};

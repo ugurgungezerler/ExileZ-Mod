@@ -6,8 +6,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 {
 	{
-		_x setDamage 0.95; //old code
-		//[_x, FALSE] call BIS_fnc_switchLamp; //1.64 code
+		_x setDamage 0.95;
 	}foreach(getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition") nearObjects [_x,20000]);
 }
 foreach
@@ -27,14 +26,3 @@ foreach
 	"Land_PortableLight_double_F",
 	"Land_PowerPoleWooden_L_F"
 ];
-
-
-
-
-/* these are apparently on client side... they don't make much difference anyway
-{   
-	{    
-		_x setDamage 1;   
-	}foreach(getArray(configFile >> "CfgWorlds" >> worldName >> "centerPosition") nearObjects [_x,20000]);
-}foreach["Land_runway_edgelight","Land_Flush_Light_yellow_F","Land_Flush_Light_green_F","Land_NavigLight"];
-*/

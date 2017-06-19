@@ -19,7 +19,7 @@ _zombieGroup =       _this select 4;
 
 if (Debug) then
 {
-	diag_log format["ExileZ Mod | SpawnZombie: Group : %1 | Position : %2 | Vest : %3 | Loot : %4 | ZGroup : %5",_group,_position,_vestGroup,_lootGroup,_zombieGroup];
+	format["ExileZ Mod: SpawnZombie: Group : %1 | Position : %2 | Vest : %3 | Loot : %4 | ZGroup : %5",_group,_position,_vestGroup,_lootGroup,_zombieGroup] call ExileServer_util_log;
 };
 
 if (count _this == 7) then {
@@ -52,20 +52,20 @@ GetZombieClass =
 	
 	if (Debug) then
 	{
-		diag_log format["ExileZ Mod: Zombie Group Highest Compound Weight : %1",_MaxValue];
+		format["ExileZ Mod: Zombie Group Highest Compound Weight : %1",_MaxValue] call ExileServer_util_log;
 	};
 	_result = ceil random (_maxValue);
 	
 	if (Debug) then
 	{
-		diag_log format["ExileZ Mod: Randomly Selected Value : %1",_result];
+		format["ExileZ Mod: Randomly Selected Value : %1",_result] call ExileServer_util_log;
 	};
 	{
 		if((_x select 1) >= _result) exitwith
 		{
 			if (Debug) then
 			{
-				diag_log format["ExileZ Mod: Selected Zombie Group : %1		Compound Weight : %2",(_x select 0),(_x select 1)];
+				format["ExileZ Mod: Selected Zombie Group : %1		Compound Weight : %2",(_x select 0),(_x select 1)] call ExileServer_util_log;
 			};
 			_return = ((_x select 0) call BIS_fnc_selectRandom) select 0;
 		};
@@ -73,7 +73,7 @@ GetZombieClass =
 	
 	if (Debug) then
 	{
-		diag_log format["ExileZ Mod: Selected Zombie Class : %1",_return];
+		format["ExileZ Mod: Selected Zombie Class : %1",_return] call ExileServer_util_log;
 	};
 	_return;
 };
@@ -82,7 +82,7 @@ if !(_validLocation) then
 {
 	if (Debug) then
 	{
-		diag_log format["ExileZ Mod: No suitable spawn location found for a Zombie near %1 ",_position];
+		format["ExileZ Mod: No suitable spawn location found for a Zombie near %1 ",_position] call ExileServer_util_log;
 	};
 }
 else
@@ -92,7 +92,7 @@ else
 
 	if (Debug) then
 	{
-		diag_log format["ExileZ Mod: Spawning 1 Zombie	|	Position : %1	|	Class : %2 ",_position,_zClass];
+		format["ExileZ Mod: Spawning 1 Zombie	|	Position : %1	|	Class : %2 ",_position,_zClass] call ExileServer_util_log;
 	};
 
 	// Old Spawn Zombie Method
