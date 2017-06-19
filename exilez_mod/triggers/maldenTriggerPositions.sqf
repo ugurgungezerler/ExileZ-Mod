@@ -63,7 +63,7 @@ NoMansLand = [
 ];                      
                         
 Mission = [             
-[9786.97,3799.66,750] //Loot and Death
+[9786.97,3799.66,350] //Loot and Death
 ];
 
 Cities = [

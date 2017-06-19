@@ -45,7 +45,7 @@ EZM_aliveZombies = EZM_aliveZombies - [_unit];
 
 if (Debug) then
 {
-	"ExileZ Mod: Removing 1 Zombie (Killed)";
+	diag_log "ExileZ Mod: Removing 1 Zombie (Killed)";
 };
 
 

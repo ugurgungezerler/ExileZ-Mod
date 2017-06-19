@@ -283,12 +283,16 @@ SpawnZombie = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\SpawnZo
 ZMPKilled = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\MPKilled.sqf";
 GetRandomLocation = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\GetRandomLocation.sqf";
 VerifyLocation = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\VerifyLocation.sqf";
-HordeLoop = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\HordeLoop.sqf";
-HarassingZombiesLoop = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\HarassingZombiesLoop.sqf";
 TurnTheLightsOff = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\LightsOff.sqf";
 
 // Compile the Zombie Monitor
 ZombieMonitor = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\ZombieMonitor.sqf";
+
+// Compile the Harassing Zombies Loop
+HarassingZombiesThread = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\HarassingZombiesThread.sqf";
+
+// Compile the Horde Loop
+HordeThread = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\HordeThread.sqf";
 
 // Add Zombie Monitor to ExileServer Thread
 if (Debug) then
@@ -300,6 +304,36 @@ else
 {
 	[Maxtime, ZombieMonitor, [], true] call ExileServer_system_thread_addTask;
 	diag_log "ExileZ Mod: Added Zombie Monitor to ExileServer Thread";
+};
+
+// Add Harassing Zombies Loop to ExileServer Thread
+if (UseHarassingZombies) then
+{
+	if (Debug) then
+	{
+		[HarassingLoopTime/2, HarassingZombiesThread, [HarassingConfig], true] call ExileServer_system_thread_addTask;
+		diag_log "ExileZ Mod: Added Debug Harassing Zombies Loop to ExileServer Thread";
+	}
+	else
+	{
+		[HarassingLoopTime, HarassingZombiesThread, [HarassingConfig], true] call ExileServer_system_thread_addTask;
+		diag_log "ExileZ Mod: Added Harassing Zombies Loop to ExileServer Thread";
+	};
+};
+
+// Add Horde Loop to ExileServer Thread
+if (UseHorde) then
+{
+	if (Debug) then
+	{
+		[HordeLoopTime*15, HordeThread, [HordeConfig], true] call ExileServer_system_thread_addTask;
+		diag_log "ExileZ Mod: Added Debug Horde Loop to ExileServer Thread";
+	}
+	else
+	{
+		[HordeLoopTime*60, HordeThread, [HordeConfig], true] call ExileServer_system_thread_addTask;
+		diag_log "ExileZ Mod: Added Horde Loop to ExileServer Thread";
+	};
 };
 	
 //Exile Vars
@@ -339,23 +373,11 @@ if (UseTriggers) then
 	}foreach Triggers;
 };
 
-//Enable the HarassingZombies
-if (UseHarassingZombies) then
-{
-	nul = [HarassingConfig] spawn HarassingZombiesLoop;
-};
-
-//Enable the Horde
-if (UseHorde) then
-{
-	nul = [HordeConfig] spawn HordeLoop;
-};
-
 if (LightsOff) then
 {
-	nul = [] spawn TurnTheLightsOff;
+	 [] call TurnTheLightsOff;
 };
 
 sleep 1;
 
-diag_log format["ExileZ Mod %1 Started at (%2)", exileZmod_version, time];
+diag_log format["ExileZ Mod: Version %1 Started at (%2)", exileZmod_version, time];

@@ -112,23 +112,22 @@ EZM_ryanzombiesmovementspeedspider        = 1;      // Animation speed for spide
 EZM_ryanzombiesmovementspeedcrawler       = 1;      // Animation speed for crawler
 
 // Harassing Zombies Config
+HarassingLoopTime						= 180; // Check for players to harass every X seconds (Default 180 seconds)
 HarassingConfig = [
 /* 0 Groups Size  */         2,                  // maximum number of zombies around a player
-/* 1 Frequency */            180,                // time in seconds between each new zombie.
-/* 2 Vest group */           Nothing,            // Vest function defined in ZVest.sqf
-/* 3 Loot group */           Nothing,            // Loot function defined in ZLoot.sqf
-/* 4 Zombie group */         Easy               // Group function defined in ZClasses.sqf
+/* 1 Vest group */           Nothing,            // Vest function defined in ZVest.sqf
+/* 2 Loot group */           Nothing,            // Loot function defined in ZLoot.sqf
+/* 3 Zombie group */         Easy               // Group function defined in ZClasses.sqf
 ];
 
 // Hordes Config
+HordeLoopTime							= 30; // Spawn a Horde every X Minutes. (Default 30 mins)
 HordeConfig = [
 /* 0 Groups Size  */         15,                 // maximum number of zombies around a player
-/* 1 Min Frequency */        20,                 // min time in minutes between each new zombie horde.
-/* 2 Max Frequency */        60,                 // max time in minutes between each new zombie horde.
-/* 3 Vest group */           Basic,              // Vest function defined in ZVest.sqf
-/* 4 Loot group */           DocAndAmmo,         // Loot function defined in ZLoot.sqf
-/* 5 Zombie group */         MediumMix,          // Group function defined in ZClasses.sqf
-/* 6 Horde density */        25                  // Radius in which the zombies will spawn should be lower than Min Spawn Distance.
+/* 1 Vest group */           Basic,              // Vest function defined in ZVest.sqf
+/* 2 Loot group */           DocAndAmmo,         // Loot function defined in ZLoot.sqf
+/* 3 Zombie group */         MediumMix,          // Group function defined in ZClasses.sqf
+/* 4 Horde density */        25                  // Radius in which the zombies will spawn should be lower than Min Spawn Distance.
 ];
 
 // Use Map Triggers or Just Hordes and Harassing Zombies?
