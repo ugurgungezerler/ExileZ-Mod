@@ -42,6 +42,8 @@ Added support for ANY map
 
 Integrated Zombie Monitor for better performance
 
+Optimised Harassing and Horde loops
+
 ## Upcoming Changes
 
 AI offloading
