@@ -11,8 +11,7 @@ ExileZ Mod by [FPS]kuplion - Based on ExileZ 2.0 by Patrix87
 
 private ["_TempPosition","_face","_group","_position","_vestGroup","_lootGroup","_zombieGroup","_validLocation","_zClass","_maxSpawnDistance","_return","_result","_maxValue"];
 
-_group = createGroup ZombieSide;
-//_group =             _this select 0;
+_group =             _this select 0;
 _position =          _this select 1;
 _vestGroup =         _this select 2;
 _lootGroup =         _this select 3;
@@ -114,16 +113,19 @@ else
 		
 	];*/
 	
-	// New Spawn Zombie Method
+	// New Spawn Zombie Method	
+	_tempGroup = createGroup ZombieSide;
+	_tempGroup setCombatMode "BLUE";
+	_tempGroup allowFleeing 0;
+	_tempGroup enableAttack false;
 	
-	//_group = createGroup ZombieSide;
-	
-	_zombie = _group createUnit [_zClass, _position, [], 0, "NONE"]; 
+	_zombie = _tempGroup createUnit [_zClass, _position, [], 0, "NONE"]; 
 	_zombie disableAI 'FSM'; 
 	_zombie enableAI 'ANIM'; 
 	_zombie disableConversation true; 
 	_zombie addMPEventHandler ['MPKilled', {_this call ZMPKilled;}]; 
-	[_zombie] joinSilent _group;
+	[_zombie] joinSilent _group;	
+	deleteGroup _tempGroup;
 	
 	// Add Zombie Loot
 	if !(call _vestGroup=='') then
