@@ -294,12 +294,12 @@ ZombieMonitor = compileFinal preprocessFileLineNumbers "exilez_mod\scripts\Zombi
 if (Debug) then
 {
 	[Maxtime/2, ZombieMonitor, [], true] call ExileServer_system_thread_addTask;
-	"ExileZ Mod: Added Debug Zombie Monitor to ExileServer Thread" call ExileServer_util_log;
+	diag_log "ExileZ Mod: Added Debug Zombie Monitor to ExileServer Thread";
 }
 else
 {
 	[Maxtime, ZombieMonitor, [], true] call ExileServer_system_thread_addTask;
-	"ExileZ Mod: Added Zombie Monitor to ExileServer Thread" call ExileServer_util_log;
+	diag_log "ExileZ Mod: Added Zombie Monitor to ExileServer Thread";
 };
 	
 //Exile Vars
@@ -319,14 +319,14 @@ if (UseTriggers) then
 			_zgroup = _currentTrigger select 13;
 			if (Debug) then
 			{
-				format["ExileZ Mod: Compounding Zombie Group Weight, Selected Group Trigger Index : %1",_forEachIndex] call ExileServer_util_log;
+				diag_log format["ExileZ Mod: Compounding Zombie Group Weight, Selected Group Trigger Index : %1",_forEachIndex];
 			};
 			_count = 0;
 			{
 				_count = _count + (_x select 1);
 				if (Debug) then
 				{
-					format["ExileZ Mod: Zombie Type Index : %1		Weight : %2		Compound Weight Value : 	%3",_forEachIndex,_x select 1,_count] call ExileServer_util_log;
+					diag_log format["ExileZ Mod: Zombie Type Index : %1		Weight : %2		Compound Weight Value : 	%3",_forEachIndex,_x select 1,_count];
 				};
 				(_zgroup select _forEachIndex) set [1,_count];
 			}foreach (_zgroup);
@@ -358,4 +358,4 @@ if (LightsOff) then
 
 sleep 1;
 
-format ["ExileZ Mod %1 Started at (%2)", exileZmod_version, time] call ExileServer_util_log;
+diag_log format["ExileZ Mod %1 Started at (%2)", exileZmod_version, time];

@@ -28,7 +28,7 @@ _respawnDelay = _triggerObj getvariable ["respawnDelay",45];
 
 if (Debug) then
 {
-	format["ExileZ Mod: TriggerLoop: Group : %1 | Size : %2 | Vest : %3 | Loot : %4 | ZGroup : %5 | SDelay : %6 | RSDelay : %7",_group,_groupSize,_vestGroup,_lootGroup,_zombieGroup,_spawnDelay,_respawnDelay] call ExileServer_util_log;
+	diag_log format["ExileZ Mod: TriggerLoop: Group : %1 | Size : %2 | Vest : %3 | Loot : %4 | ZGroup : %5 | SDelay : %6 | RSDelay : %7",_group,_groupSize,_vestGroup,_lootGroup,_zombieGroup,_spawnDelay,_respawnDelay];
 };
 
 //local variables
@@ -39,7 +39,7 @@ _nearestLocation = text nearestLocation [_triggerPosition, ""];
 
 if (Debug) then
 {
-	format["ExileZ Mod: Activating Trigger	|	Position : %1	|	GroupSize : %2	|	Near : %3 ",_triggerPosition,_groupSize,_nearestLocation] call ExileServer_util_log;
+	diag_log format["ExileZ Mod: Activating Trigger	|	Position : %1	|	GroupSize : %2	|	Near : %3 ",_triggerPosition,_groupSize,_nearestLocation];
 };
 
 //Select a random player and spawn a zombie near him
@@ -97,5 +97,5 @@ while {triggeractivated (_this select 0)} do
 	};
 };
 //Reboot the trigger
-format["ExileZ Mod: Deactivating Trigger	|	Position : %1	|	GroupSize : %2	|	Near : %3 ",_triggerPosition,_groupSize,_nearestLocation] call ExileServer_util_log;
+diag_log format["ExileZ Mod: Deactivating Trigger	|	Position : %1	|	GroupSize : %2	|	Near : %3 ",_triggerPosition,_groupSize,_nearestLocation];
 _this select 0 setvariable ["active", false, False];

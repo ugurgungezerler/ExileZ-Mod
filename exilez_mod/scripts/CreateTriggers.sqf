@@ -76,8 +76,9 @@ if (_showTriggerOnMap) then {
 };
 
 
-if (Debug) then {
-	format["ExileZ Mod: Creating Trigger	|	Position : %1 	|	Radius : %2m	|	Near : %3 ",_triggerPosition,_triggerRadius,_nearestLocation] call ExileServer_util_log;
+if (Debug) then
+{
+	diag_log format["ExileZ Mod: Creating Trigger	|	Position : %1 	|	Radius : %2m	|	Near : %3 ",_triggerPosition,_triggerRadius,_nearestLocation];
 };
 
 // Store Variables in the trigger.
@@ -101,11 +102,3 @@ if !(isnil "_mission") then {
 if !(isnil "_lootBox") then {
 	nul = [_triggerPosition] spawn _lootBox;
 };
-
-
-
-
-
-
-
-

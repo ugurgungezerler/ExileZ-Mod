@@ -8,7 +8,7 @@ private ["_device","_zombie","_zombiePos","_zombieClass","_distance","_radius","
 
 if (Debug) then
 {
-	format["ExileZ Mod: Monitored Zombies	|	%1	", (count EZM_aliveZombies)] call ExileServer_util_log;
+	diag_log format["ExileZ Mod: Monitored Zombies	|	%1	", (count EZM_aliveZombies)];
 };
 
 {
@@ -24,7 +24,7 @@ if (Debug) then
 		
 		if (Debug) then
 		{
-			format["ExileZ Mod: Removing 1 Zombie (Probably dead..)	|	Position : %1	|	Class : %2",_zombiePos,_zombieClass] call ExileServer_util_log;
+			diag_log format["ExileZ Mod: Removing 1 Zombie (Probably dead..)	|	Position : %1	|	Class : %2",_zombiePos,_zombieClass];
 		};		
 	};
 	
@@ -38,7 +38,7 @@ if (Debug) then
 	
 		if (Debug) then
 		{
-			format["ExileZ Mod: Removing 1 Zombie due to no Players	|	Position : %1	|	Class : %2",_zombiePos,_zombieClass] call ExileServer_util_log;
+			diag_log format["ExileZ Mod: Removing 1 Zombie due to no Players	|	Position : %1	|	Class : %2",_zombiePos,_zombieClass];
 		};
 	};
 	
@@ -52,7 +52,7 @@ if (Debug) then
 	
 		if (Debug) then
 		{
-			format["ExileZ Mod: Removing 1 Zombie at a SafeZone	|	Position : %1	|	Class : %2",_zombiePos,_zombieClass] call ExileServer_util_log;
+			diag_log format["ExileZ Mod: Removing 1 Zombie at a SafeZone	|	Position : %1	|	Class : %2",_zombiePos,_zombieClass];
 		};
 	};
 	
@@ -66,7 +66,7 @@ if (Debug) then
 	
 		if (Debug) then
 		{
-			format["ExileZ Mod: Removing 1 Zombie at a Territory	|	Position : %1	|	Class : %2",_zombiePos,_zombieClass] call ExileServer_util_log;
+			diag_log format["ExileZ Mod: Removing 1 Zombie at a Territory	|	Position : %1	|	Class : %2",_zombiePos,_zombieClass];
 		};
 	};
 	
@@ -85,7 +85,7 @@ if (Debug) then
 	
 				if (Debug) then
 				{
-					format["ExileZ Mod: Removing 1 Zombie near a Land Device	|	Position : %1	|	Class : %2",_zombiePos,_zombieClass] call ExileServer_util_log;
+					diag_log format["ExileZ Mod: Removing 1 Zombie near a Land Device	|	Position : %1	|	Class : %2",_zombiePos,_zombieClass];
 				};
 			};
 		}forEach _device;
@@ -106,7 +106,7 @@ if (Debug) then
 	
 				if (Debug) then
 				{
-					format["ExileZ Mod: Removing 1 Zombie near a Truck Device	|	Position : %1	|	Class : %2",_zombiePos,_zombieClass] call ExileServer_util_log;
+					diag_log format["ExileZ Mod: Removing 1 Zombie near a Truck Device	|	Position : %1	|	Class : %2",_zombiePos,_zombieClass];
 				};
 			};
 		}forEach _device;
